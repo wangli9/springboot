@@ -106,11 +106,11 @@ requirejs(["jquery","util","easyui"], function ($,Util) {
                 };
                 var r =JSON.stringify(param);
                 Util.ajax.postJsonM("/select",r,function (result) {
-                    var data = {
-                                rows: result.DATA
-                                // total: result.TOTAL
-                            }
-                            success(data);
+                    // var data = {
+                    //             rows: result.DATA
+                    //             // total: result.TOTAL
+                    //         }
+                            success(result);
                 })
 
                 // var start = (param.page - 1) * param.rows;
