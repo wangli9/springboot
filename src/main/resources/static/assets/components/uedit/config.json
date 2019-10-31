@@ -1,0 +1,24 @@
+{
+/*  "imageUrl": "http://localhost:8080/umeditorfiles/uploadeditorfile",
+  "imageActionName": "uploadImg",
+  "imageAllowFiles": [".jpg",".png",".jpeg",".gif",".bmp"],
+  "imageUrlPrefix": "http://localhost:8080/umeditorfiles/download?fileId=",
+  *//* 上传视频配置 *//*
+  "videoActionName": "uploadvideo",
+  "videoFieldName": "upfile",
+  "videoPathFormat": "http://localhost:8080/umeditorfiles/uploadeditorfile", //上传保存路径,可以自定义保存路径和文件名格式
+  "videoUrlPrefix": "http://localhost:8080/umeditorfiles/download?fileId=", *//* 视频访问路径前缀 *//*
+  "videoAllowFiles": [
+    ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
+    ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid"],
+
+  *//* 上传文件配置 *//*
+  "fileActionName": "uploadfile", *//* controller里,执行上传视频的action名称 *//*
+  "fileFieldName": "upfile", *//* 提交的文件表单名称 *//*
+  "filePathFormat": "http://localhost:8080/umeditorfiles/uploadeditorfile", *//* 上传保存路径,可以自定义保存路径和文件名格式 *//*
+  "fileUrlPrefix": "http://localhost:8080/umeditorfiles/download?fileId=", *//* 文件访问路径前缀 *//*
+  "fileAllowFiles": [
+    ".rar", ".zip", ".tar", ".gz", ".7z", ".bz2", ".cab", ".iso",
+    ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".pdf", ".txt", ".md", ".xml"
+  ]*//* 上传文件格式显示 */
+}

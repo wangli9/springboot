@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--驱动文件指定配置项 -->
+    <classPathEntry location="D:\setting\repo\mysql\mysql-connector-java\8.0.17\mysql-connector-java-8.0.17.jar"/>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+
+        <!--代码上面的注释规则  false时打开注释，true时关闭注释-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <!--jdbc配置-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/test" userId="root"
+                        password="123456">
+        </jdbcConnection>
+        <!--mybatis里专门用来处理NUMERIC和DECIMAL类型的策略-->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--实体类生成配置-->
+        <javaModelGenerator targetPackage="com.example.springbootmybatis.domain" targetProject="E:\workspace-study\springboot-mybatis\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成sql语句的xml文件-->
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="E:\workspace-study\springboot-mybatis\src\main\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--Mapper生成配置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.springbootmybatis.dao" targetProject="E:\workspace-study\springboot-mybatis\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- ****************要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名*****************-->
+
+        <table tableName="t_student"/>
+
+    </context>
+</generatorConfiguration>
