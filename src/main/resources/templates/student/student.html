@@ -6,27 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>学生基本信息</title>
     <link th:href="@{/static/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../static/assets/lib/easyui/themes/unicom/unicom.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/assets/lib/easyui/themes/unicom/iconfont/iconfont.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/assets/lib/ztree/css/unicomStyle/tree.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="../../assets/components/rating/themes/fontawesome-stars.css"/>-->
+    <link href="../../static/css/styles.css" rel="stylesheet">
+    <style>.datagrid-body{ width:110% !important;}</style>
 </head>
 <body>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <button id="btn_search" type="button" class="btn btn-primary">查询</button>
-    </div>
-    <div class="panel-body">
-        <table class="table">
-            <thead>
-            <th>头像</th>
-            <th>名字</th>
-            <th>HP</th>
-            </thead>
-            <tbody>
 
-            </tbody>
-        </table>
+<div data-options="region:'center'" style="overflow: auto;">
+    <div id="page_content" data-options="region:'center'" style="width:98%; height:800px; margin:0px 10px 10px 10px">
+
     </div>
-    <div class="panel-footer">面板脚注</div>
+    <!--这里是弹窗div，默认隐藏-->
+    <div  id='pop_window' style='display:none;'>
+        <div id='win_content' style='overflow:auto'>
+        </div>
+    </div>
 </div>
+
+<!--<div class="panel panel-default">-->
+    <!--<div class="panel-heading">-->
+        <!--<button id="btn_search" type="button" class="btn btn-primary">查询</button>-->
+    <!--</div>-->
+    <!--<div class="panel-body">-->
+        <!--<table class="table">-->
+            <!--<thead>-->
+            <!--<th>头像</th>-->
+            <!--<th>名字</th>-->
+            <!--<th>HP</th>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</div>-->
+    <!--<div class="panel-footer">面板脚注</div>-->
+<!--</div>-->
 
 <!--<script th:src="@{/static/vendor/bootstrap/js/bootstrap.min.js}" ></script>-->
 <!--<script th:src="@{/static/vendor/jquery/jquery.min.js}"></script>-->
