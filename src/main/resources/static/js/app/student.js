@@ -5,14 +5,13 @@ requirejs(["jquery","util","easyui"], function ($,Util) {
 
     var Inintional = function () {
 
-        alert(111);
 
         $page = $("<div></div>");
         $('#page_content').append($page);
 
         //初始化表单
-        addSearchForm();
-        addGridDom();
+        // addSearchForm();
+        // addGridDom();
 
         initGrid();
 
@@ -34,6 +33,19 @@ requirejs(["jquery","util","easyui"], function ($,Util) {
             })
 
         });
+        
+        $("#createWord").click(function (e) {
+            var param = {
+                "configId":"王大雷",
+                "workTimeId":22,
+                "beganDate" : "2019-11-14 11:17:35"
+            };
+            var r =JSON.stringify(param);
+            Util.ajax.postJsonM("/insertTCentreWorkTimeStaff",r,function (result) {
+                alert(result);
+            })
+
+        });
 
     };
     function addSearchForm() {
@@ -42,7 +54,7 @@ requirejs(["jquery","util","easyui"], function ($,Util) {
             "<form class='form form-horizontal' id='myForm'>",
 
             // 测试渲染
-            "<div class='row cl'>",
+            "<div class='row'>",
             "<label class='form-label col-2'>常用语：</label>",
             "<div class='formControls col-2'>",
             "<input type='text' class='easyui-textbox' name='word' id='WORD'style='width:100%;height:30px'>",
@@ -80,10 +92,19 @@ requirejs(["jquery","util","easyui"], function ($,Util) {
     };
 
     function initGrid() {
-        $page.find("#word").datagrid({
+        $("#beginDate").datebox({
+            required:true
+        });
+        $("#endDate").datetimebox({
+
+        });
+        $("#word").datagrid({
             columns: [[
-                {field: 'name', title: '常用语编码', width: '50%'},
-                {field: 'age', title: '常用语名称', width: '50%'}
+                {field: 'configId', title: '主键', width: '20%'},
+                {field: 'workTimeId', title: '班务ID', width: '20%'},
+                {field: 'staffName', title: '员工姓名', width: '20%'},
+                {field: 'beganDate', title: '开始日期', width: '20%'},
+                {field: 'endDate', title: '结束日期', width: '20%'}
             ]],
             fitColumns: true,
             width: '100%',
@@ -101,11 +122,10 @@ requirejs(["jquery","util","easyui"], function ($,Util) {
             loader: function (param, success) {
 
                 var param = {
-                    "name":"王大雷",
-                    "age":22
+                    "state":"1"
                 };
                 var r =JSON.stringify(param);
-                Util.ajax.postJsonM("/select",r,function (result) {
+                Util.ajax.postJsonM("/queryTCentreWorkTimeStaff",r,function (result) {
                     // var data = {
                     //             rows: result.DATA
                     //             // total: result.TOTAL
