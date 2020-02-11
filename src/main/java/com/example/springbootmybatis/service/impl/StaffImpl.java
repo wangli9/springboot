@@ -4,6 +4,7 @@ import com.example.springbootmybatis.bean.TCentreWorkTimeStaff;
 import com.example.springbootmybatis.dao.TCentreWorkTimeStaffMapper;
 import com.example.springbootmybatis.service.IStaffService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-@Transactional
+@Transactional(propagation = Propagation.REQUIRED)
 public class StaffImpl implements IStaffService {
     @Resource
     private TCentreWorkTimeStaffMapper tCentreWorkTimeStaffMapper;

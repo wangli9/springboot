@@ -3,6 +3,7 @@ package com.example.springbootmybatis.controll;
 
 import com.example.springbootmybatis.bean.TCentreWorkTimeStaff;
 import com.example.springbootmybatis.service.IStaffService;
+import com.example.springbootmybatis.service.impl.StaffImpl;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,7 @@ public class StaffControl {
 
     @RequestMapping(value = "/queryTCentreWorkTimeStaff",method = RequestMethod.POST)
     public List<TCentreWorkTimeStaff> queryTCentreWorkTimeStaff(@RequestBody Map<String,Object> map){
-        logger.info("查询员工信息入参："+map.toString());
+        logger.info("查询员工信息入参2："+map.toString());
         List<TCentreWorkTimeStaff> list = null;
         try {
             list = iStaffService.queryTCentreWorkTimeStaff(map);
